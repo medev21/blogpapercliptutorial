@@ -20,7 +20,7 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:title, :iframe, :description)
+      params.require(:post).permit(:title, :iframe, :intro)
     end
 
     def find_post

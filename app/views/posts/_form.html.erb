@@ -1,0 +1,6 @@
+<%= simple_form_for @post do |form| %>
+  <%= form.input :title, label: 'Title' %>
+  <%= form.input :iframe, label: 'HTML tag' %>
+  <%= form.input :intro, label: 'Intro' %>
+  <%= form.button :submit %>
+<% end %>
