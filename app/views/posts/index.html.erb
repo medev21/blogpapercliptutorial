@@ -4,7 +4,7 @@
 <br><br>
 
 <% @posts.each do |post| %>
-  <h2><%= post.title %></h2>
+  <h2><%= link_to post.title, post_path(post) %></h2>
   <% if post.iframe.present? %>
     <p><%= post.iframe.html_safe %></p>
   <% end %>
