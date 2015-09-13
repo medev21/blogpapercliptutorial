@@ -1,3 +1,12 @@
 <h1>this is the index/root page</h1>
 <br><br>
 <%= link_to 'New Post', new_post_path, class: 'btn btn-default' %>
+<br><br>
+
+<% @posts.each do |post| %>
+  <h2><%= post.title %></h2>
+  <% if post.iframe.present? %>
+    <p><%= post.iframe.html_safe %></p>
+  <% end %>
+  <p><%= post.intro %></p>
+<% end %>
