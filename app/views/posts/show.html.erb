@@ -1,0 +1,8 @@
+<h1>this is the show page</h1>
+<br><br>
+
+<h2><%= @post.title %></h2>
+<% if @post.iframe.present? %>
+  <p><%= @post.iframe.html_safe %></p>
+<% end %>
+<p><%= @post.intro %></p><br>

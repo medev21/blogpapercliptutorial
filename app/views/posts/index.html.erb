@@ -8,5 +8,6 @@
   <% if post.iframe.present? %>
     <p><%= post.iframe.html_safe %></p>
   <% end %>
-  <p><%= post.intro %></p>
+  <p><%= post.intro %></p><br>
+  <%= link_to 'Read More', post_path(post), class: 'btn btn-default' %>
 <% end %>
