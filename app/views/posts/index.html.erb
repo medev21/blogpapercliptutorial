@@ -1,6 +1,8 @@
 <h1>this is the index/root page</h1>
 <br><br>
-<%= link_to 'New Post', new_post_path, class: 'btn btn-default' %>
+<% if user_signed_in? %>
+  <%= link_to 'New Post', new_post_path, class: 'btn btn-default' %>
+<% end %>
 <br><br>
 
 <% @posts.each do |post| %>

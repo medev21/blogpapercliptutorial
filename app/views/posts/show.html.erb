@@ -2,11 +2,18 @@
 <br><br>
 
 <h2><%= @post.title %></h2>
+<em><%= @post.created_at.strftime('%B, %d %Y %I:%M %p') %> | <%= @post.user.email %></em>
+<br>
 <% if @post.iframe.present? %>
   <p><%= @post.iframe.html_safe %></p>
 <% end %>
+<br>
 <p><%= @post.intro %></p><br><br>
 
 <%= link_to 'Back', root_path, class: 'btn btn-default' %>
-<%= link_to 'Edit', edit_post_path(@post), class: 'btn btn-default' %>
-<%= link_to 'Delete', post_path(@post), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-default' %>
+<% if user_signed_in? %>
+  <% if @post.user_id == current_user.id %>
+    <%= link_to 'Edit', edit_post_path(@post), class: 'btn btn-default' %>
+    <%= link_to 'Delete', post_path(@post), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-default' %>
+  <% end %>
+<% end %>
