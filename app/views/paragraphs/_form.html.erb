@@ -1,0 +1,4 @@
+<%= simple_form_for([@post, @post.paragraphs.build]) do |form| %>
+  <%= form.input :content, label: 'Add here' %>
+  <%= form.button :submit %>
+<% end %>
