@@ -11,14 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150915092203) do
+ActiveRecord::Schema.define(version: 20150915101936) do
 
   create_table "paragraphs", force: :cascade do |t|
     t.text     "content"
     t.integer  "post_id"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "content_image_file_name"
+    t.string   "content_image_content_type"
+    t.integer  "content_image_file_size"
+    t.datetime "content_image_updated_at"
   end
 
   add_index "paragraphs", ["post_id"], name: "index_paragraphs_on_post_id"

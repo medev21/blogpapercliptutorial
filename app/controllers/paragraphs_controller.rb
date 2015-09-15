@@ -14,7 +14,7 @@ class ParagraphsController < ApplicationController
 
   private
     def paragraph_params
-      params.require(:paragraph).permit(:content)
+      params.require(:paragraph).permit(:content, :content_image)
     end
 
     def find_post
@@ -22,5 +22,6 @@ class ParagraphsController < ApplicationController
     end
 
     def find_paragraph
+      @paragraph = Paragraph.find(params[:id])
     end
 end
