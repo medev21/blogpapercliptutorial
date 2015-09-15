@@ -8,11 +8,13 @@
   <p><%= @post.iframe.html_safe %></p>
 <% end %>
 <br>
-<p><%= @post.intro %></p><br><br>
+<p><%= @post.intro %></p><br>
+<%= render @post.paragraphs %>
 
 <h2>Add a paragraph: </h2>
 <%= render 'paragraphs/form'%>
 <br>
+
 <%= link_to 'Back', root_path, class: 'btn btn-default' %>
 <% if user_signed_in? %>
   <% if @post.user_id == current_user.id %>
