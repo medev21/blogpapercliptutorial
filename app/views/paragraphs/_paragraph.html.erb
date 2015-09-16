@@ -1,1 +1,4 @@
-<p><%= paragraph.content %></p>
+<p><%= paragraph.content.html_safe %></p>
+<% if paragraph.content_image.present? %>
+  <%= image_tag paragraph.content_image.url(:medium) %>
+<% end %>

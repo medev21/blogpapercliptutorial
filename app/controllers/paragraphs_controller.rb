@@ -1,6 +1,7 @@
 class ParagraphsController < ApplicationController
   before_action :find_post
   before_action :find_paragraph, only: [:edit, :update, :destroy]
+  
   def create
     @paragraph = @post.paragraphs.create(paragraph_params)
     @paragraph.user_id = current_user.id
