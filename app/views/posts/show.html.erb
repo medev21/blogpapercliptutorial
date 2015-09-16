@@ -11,14 +11,14 @@
 <p><%= @post.intro %></p><br>
 <%= render @post.paragraphs %>
 
-<h2>Add a paragraph: </h2>
+
 <%= render 'paragraphs/form'%>
 <br>
 
-<%= link_to 'Back', root_path, class: 'btn btn-default' %>
+<%= link_to 'Back to Main Page', root_path, class: 'btn btn-default' %>
 <% if user_signed_in? %>
   <% if @post.user_id == current_user.id %>
-    <%= link_to 'Edit', edit_post_path(@post), class: 'btn btn-default' %>
-    <%= link_to 'Delete', post_path(@post), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-default' %>
+    <%= link_to 'Edit Intro', edit_post_path(@post), class: 'btn btn-default' %>
+    <%= link_to 'Delete Post', post_path(@post), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-default' %>
   <% end %>
 <% end %>
