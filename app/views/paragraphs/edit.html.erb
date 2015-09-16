@@ -1,0 +1,6 @@
+<h1>Edit comment</h1>
+<%= simple_form_for([@post, @paragraph], html: { multipart: true }) do |form| %>
+    <%= form.input :content, label: 'Update paragraph' %>
+    <%= form.file_field :content_image %>
+    <%= form.button :submit %>
+<% end %>

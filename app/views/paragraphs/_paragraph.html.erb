@@ -2,3 +2,10 @@
 <% if paragraph.content_image.present? %>
   <%= image_tag paragraph.content_image.url(:medium) %>
 <% end %>
+
+<% if user_signed_in? %>
+  <% if paragraph.user_id == current_user.id %>
+    <%= link_to 'Edit paragraph', edit_post_paragraph_path(paragraph.post, paragraph) , class: 'btn btn-default' %>
+    <%= link_to 'Delete paragraph', post_paragraph_path(paragraph.post, paragraph), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-default' %>
+  <% end %>
+<% end %>
