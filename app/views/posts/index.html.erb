@@ -1,15 +1,19 @@
-<h1>this is the index/root page</h1>
+
 <br><br>
-<% if user_signed_in? %>
+<!-- <% if user_signed_in? %>
   <%= link_to 'New Post', new_post_path, class: 'btn btn-default' %>
 <% end %>
-<br><br>
+<br><br> -->
 
-<% @posts.each do |post| %>
-  <h2><%= link_to post.title, post_path(post) %></h2>
-  <% if post.iframe.present? %>
-    <p><%= post.iframe.html_safe %></p>
-  <% end %>
-  <p><%= post.intro %></p><br>
-  <%= link_to 'Read More', post_path(post), class: 'btn btn-default' %>
-<% end %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <% @posts.each do |post| %>
+      <h2><%= link_to post.title, post_path(post) %></h2>
+      <% if post.iframe.present? %>
+        <p><%= post.iframe.html_safe %></p>
+      <% end %>
+      <p><%= post.intro %></p><br>
+      <%= link_to 'Read More', post_path(post), class: 'btn btn-default' %>
+    <% end %>
+  </div>
+</div>
