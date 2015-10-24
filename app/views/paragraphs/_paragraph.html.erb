@@ -1,6 +1,6 @@
-<p><%= paragraph.content.html_safe %></p>
+<p class='text-center'><%= paragraph.content.html_safe %></p>
 <% if paragraph.content_image.present? %>
-  <%= image_tag paragraph.content_image.url(:medium) %>
+  <%= image_tag paragraph.content_image.url(:medium), class: 'img-responsive center-block' %><br>
 <% end %>
 
 <% if user_signed_in? %>

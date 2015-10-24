@@ -1,11 +1,8 @@
-<h1>this is the show page</h1>
-<br><br>
-
-<h2><%= @post.title %></h2>
-<em><%= @post.created_at.strftime('%B, %d %Y %I:%M %p') %> | <%= @post.user.email %></em>
+<h1 class='text-center'><%= @post.title %></h1>
+<p class='text-center'><em><%= @post.created_at.strftime('%B, %d %Y %I:%M %p') %> | <%= @post.user.email %></em></p>
 <br>
 <% if @post.iframe.present? %>
-  <p><%= @post.iframe.html_safe %></p>
+  <p class="text-center"><%= @post.iframe.html_safe %></p>
 <% end %>
 <br>
 <p><%= @post.intro %></p><br>
@@ -15,7 +12,7 @@
 <%= render 'paragraphs/form'%>
 <br>
 
-<%= link_to 'Back to Main Page', root_path, class: 'btn btn-default' %>
+<%= link_to 'Back to Main Page', root_path, class: 'btn btn-default center-class' %>
 <% if user_signed_in? %>
   <% if @post.user_id == current_user.id %>
     <%= link_to 'Edit Intro', edit_post_path(@post), class: 'btn btn-default' %>
