@@ -1,5 +1,5 @@
 <h1 class='text-center'><%= @post.title %></h1>
-<p class='text-center'><em><%= @post.created_at.strftime('%B, %d %Y %I:%M %p') %> | <%= @post.user.email %></em></p>
+<p class='text-center'><em><%= @post.created_at.strftime('%B, %d %Y %I:%M %p') %> | <%= @post.user.username %> , <%= @post.user.email %></em></p>
 <br>
 <% if @post.iframe.present? %>
   <p class="text-center"><%= @post.iframe.html_safe %></p>
